@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "yargs": "^17.4.0"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "a04-vennila-t",
+  "description": "This assignment will help you set up and interact with a database using Express.js and better-sqlite.",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/comp426-2022-spring/a04-vennila-t.git"
+  },
+  "author": "",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/comp426-2022-spring/a04-vennila-t/issues"
+  },
+  "homepage": "https://github.com/comp426-2022-spring/a04-vennila-t#readme"
+}
