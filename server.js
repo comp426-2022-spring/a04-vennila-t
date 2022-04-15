@@ -3,7 +3,7 @@
 // Require Express.js
 const express = require('express')
 const app = express()
-const db = require('/database.js')
+const db = require('./database.js')
 const fs = require('fs')
 const morgan = require('morgan')
 const args = require('yargs').argv
