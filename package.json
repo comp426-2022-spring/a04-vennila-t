@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "express": "^4.17.3",
     "yargs": "^17.4.0"
   },
   "scripts": {
@@ -9,7 +10,6 @@
   "description": "This assignment will help you set up and interact with a database using Express.js and better-sqlite.",
   "version": "1.0.0",
   "main": "server.js",
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/comp426-2022-spring/a04-vennila-t.git"
