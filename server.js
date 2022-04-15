@@ -1,6 +1,5 @@
 // server.js file that takes an arbitrary port number as a command line argument (i.e. I should be able to run it with node server.js. The port should default to 5000 if no argument is given.
-
-const args = require('yargs').argv
+const args = require('minimist')(process.argv.slice(2));
 
 // See what is stored in the object produced by minimist
 console.log(args)
@@ -21,7 +20,6 @@ server.js [options]
 
 --help	Return this message and exit.
 `)
-
 // If --help or -h, echo help text to STDOUT and exit
 if (args.help || args.h) {
     console.log(help)
