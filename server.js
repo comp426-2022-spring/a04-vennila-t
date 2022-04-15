@@ -34,6 +34,9 @@ if (args.help || args.h) {
     process.exit(0)
 }
 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 // define port variable
 let port;
 
