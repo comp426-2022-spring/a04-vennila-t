@@ -1,11 +1,5 @@
 // server.js file that takes an arbitrary port number as a command line argument (i.e. I should be able to run it with node server.js. The port should default to 5000 if no argument is given.
 
-// Require Express.js
-const express = require('express')
-const app = express()
-const db = require('./database.js')
-const fs = require('fs')
-const morgan = require('morgan')
 const args = require('yargs').argv
 
 // See what is stored in the object produced by minimist
@@ -33,6 +27,13 @@ if (args.help || args.h) {
     console.log(help)
     process.exit(0)
 }
+
+// Require Express.js
+const express = require('express')
+const app = express()
+const db = require('./database.js')
+const fs = require('fs')
+const morgan = require('morgan')
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -62,16 +63,6 @@ const server = app.listen(port, () => {
     console.log('App listening on port %PORT%'.replace('%PORT%',port))
 })
 
-//endpoints
-// Check endpoint at /app/ that returns 200 OK.
-app.get('/app/', (req, res) => {
-// Respond with status 200
-	res.status = 200;
-// Respond with status message "OK"
-    res.statusMessage = 'OK';
-    res.writeHead( res.statusCode, { 'Content-Type' : 'text/plain' });
-    res.end(res.statusCode+ ' ' +res.statusMessage)
-})
 
 // Middleware
 app.use( (req, res, next) => {
@@ -102,6 +93,19 @@ if(args.debug === true) {
       throw new Error('Error test successful.')
   });
 }
+
+//endpoints
+// Check endpoint at /app/ that returns 200 OK.
+app.get('/app/', (req, res) => {
+// Respond with status 200
+	res.status = 200;
+// Respond with status message "OK"
+    res.statusMessage = 'OK';
+    res.writeHead( res.statusCode, { 'Content-Type' : 'text/plain' });
+    res.end(res.statusCode+ ' ' +res.statusMessage)
+})
+
+
 // Endpoint /app/flip/ that returns JSON {"flip":"heads"}
 // or {"flip":"tails"} corresponding to the results of the random coin flip.
 app.get('/app/flip', (req, res) => {
